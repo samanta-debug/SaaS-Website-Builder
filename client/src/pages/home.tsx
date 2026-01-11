@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Globe, Shield, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -24,17 +25,21 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/40 bg-background/80 backdrop-blur-md">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold">S</span>
-            </div>
-            <span className="font-bold text-xl tracking-tight">SaaS</span>
+            <Link href="/">
+              <div className="flex items-center gap-2 cursor-pointer">
+                <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                  <span className="text-primary-foreground font-bold">S</span>
+                </div>
+                <span className="font-bold text-xl tracking-tight">SaaS</span>
+              </div>
+            </Link>
           </div>
           
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
-            <a href="#product" className="hover:text-foreground transition-colors">Product</a>
-            <a href="#features" className="hover:text-foreground transition-colors">Features</a>
-            <a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a>
-            <a href="#about" className="hover:text-foreground transition-colors">About</a>
+            <Link href="/product"><a className="hover:text-foreground transition-colors">Product</a></Link>
+            <Link href="/resources"><a className="hover:text-foreground transition-colors">Resources</a></Link>
+            <Link href="/pricing"><a className="hover:text-foreground transition-colors">Pricing</a></Link>
+            <Link href="/blog"><a className="hover:text-foreground transition-colors">Blog</a></Link>
           </div>
 
           <div className="flex items-center gap-4">
@@ -218,19 +223,15 @@ export default function Home() {
             <div>
               <h4 className="font-semibold mb-4">Product</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#" className="hover:text-white transition-colors">Features</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Integrations</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Pricing</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Changelog</a></li>
+                <li><Link href="/product"><a className="hover:text-white transition-colors">Features</a></Link></li>
+                <li><Link href="/pricing"><a className="hover:text-white transition-colors">Pricing</a></Link></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Resources</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#" className="hover:text-white transition-colors">Documentation</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">API Reference</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Community</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
+                <li><Link href="/resources"><a className="hover:text-white transition-colors">Documentation</a></Link></li>
+                <li><Link href="/blog"><a className="hover:text-white transition-colors">Blog</a></Link></li>
               </ul>
             </div>
             <div>
